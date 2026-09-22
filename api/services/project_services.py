@@ -15,4 +15,8 @@ class ProjectServices :
         project = get_object_or_404(Project,id=project_id) 
         project.delete()
     
+    def done_project(self,project_id) :
+        project = get_object_or_404(Project,id=project_id)
+        project.progress = "DONE"
+        project.save()
     
